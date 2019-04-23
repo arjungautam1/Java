@@ -1,0 +1,25 @@
+//insert into the database from the project 
+package jd;
+import java.sql.*;
+
+public class Practice3 
+{
+	public static void main(String[] args) throws Exception {
+		String url="jdbc:mysql://localhost:3306/friends";
+		String uname="root";
+		String pass="";
+		String query="insert into guys (5,'Sagun')";
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con=DriverManager.getConnection(url,uname,pass);
+		Statement st=con.createStatement();
+		ResultSet rs=st.executeQuery(query);
+		rs.next();
+		String name=rs.getString("name");
+		System.out.println(name);
+		st.close();
+		con.close();
+		
+	}
+
+}

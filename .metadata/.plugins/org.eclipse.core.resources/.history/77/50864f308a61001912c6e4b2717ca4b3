@@ -1,0 +1,14 @@
+package array;
+
+public class Declaration {
+	public static void main(String[] args) {
+		int[] myintarray= {1,2,3,4,5};
+		int index=0;
+		while(index<6)
+		{
+			System.out.println(myintarray[index]);
+			index=index+1;
+		}
+	}
+
+}

@@ -1,0 +1,26 @@
+package jd;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
+
+public class Practice {
+public static void main(String[] args) throws Exception 
+{
+	String url="jdbc:mysql://localhost:3306:friends";
+	String uname="root";
+	String pass="";
+	String query="";
+	Class.forName("com.sql.jdbc.Driver");
+	Connection con=DriverManager.getConnection(url,uname,pass);
+	Statement st=con.getStatement();
+	ResultSet rs=st.executeQuery(query);
+	rs.next();
+	String Name=rs.getString("name");
+	System.out.println(Name);
+	st.close();
+	con.close();
+	
+	
+}
+}

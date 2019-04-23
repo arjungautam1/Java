@@ -1,0 +1,13 @@
+package exception;
+import java.util.Scanner;
+import java.io.BufferedReader;
+
+public class CheckedException {
+	public static void main(String[] args) {
+		System.out.println("Enter a number:");
+		BufferedReader br=new BufferedReader(new InputStreanReader(System.in));
+			
+	}		
+
+}
+		

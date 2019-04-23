@@ -1,0 +1,18 @@
+package exception;
+
+public class Arithmetic {
+	public static void main(String[] args) {
+		int i = 8,j= 2,k=0
+		try
+		{
+			i=j/k;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Divided by zero .");
+		}
+		System.out.println(i);
+		
+	}
+
+}

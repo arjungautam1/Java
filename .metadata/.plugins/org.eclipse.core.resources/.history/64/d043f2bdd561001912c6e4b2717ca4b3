@@ -1,0 +1,24 @@
+package exception;
+
+public class Throw {
+	public static void main(String[] args) {
+		int i,j;
+		i=8;
+		j=9;
+		try
+		{
+		  int k=i/j;
+		  if(k==0)
+			  throw new ExceptionEqualToZero("This is not possible."); //create an new class named ExceptionEqualToZero ehich extends Exception 
+		  System.out.println(k);
+			
+		}
+		catch(ExceptionEqualToZero e)
+		{
+			//System.out.println(e.getMessage());
+			//e.printStackTrace();
+		}
+		
+	}
+
+}

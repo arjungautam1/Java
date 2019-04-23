@@ -1,0 +1,10 @@
+package exception;
+
+public class ExceptionEqualToZero extends Exception {
+	public ExceptionEqualToZero(String s)	//constructor
+	{
+		super(s);
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package exception;
+
+public class Throw {
+	public static void main(String[] args) {
+		int i,j=8,k=0;
+		try
+		{
+			i=j/k;
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Divided By zero.");
+		}
+	}
+
+}

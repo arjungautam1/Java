@@ -1,0 +1,28 @@
+package jd;
+import java.sql.*;
+
+
+
+
+
+public class Practice {
+public static void main(String[] args) throws Exception 
+{
+	String url="jdbc:mysql://localhost:3306/friends";
+	String uname="root";
+	String pass="";
+	String query="select name from guys where roll=6";
+	
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	Connection con=DriverManager.getConnection(url,uname,pass);
+	Statement st=con.createStatement();
+	ResultSet rs=st.executeQuery(query);
+	rs.next();
+	String Name=rs.getString("name");
+	System.out.println(Name);
+	st.close();
+	con.close();
+	
+	
+}
+}

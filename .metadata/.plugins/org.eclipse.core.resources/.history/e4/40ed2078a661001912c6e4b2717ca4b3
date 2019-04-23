@@ -1,0 +1,27 @@
+package exception;
+
+public class OneTryMultipleCatch {
+	public static void main(String[] args) {
+		int i,j=8,k=2;
+		int[] array=new int[3];
+		try
+		{
+			i=j/k;
+			for(i=0;i<5;i++)
+			{
+				array[i]=i+1;
+			}
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("Divided by zero.");
+			//e.printStackTrace();
+		}
+		catch(ArrayIndexOutOfBoundException)
+		{
+			System.out.println("Array out of Bound");
+		}
+		System.out.println("The value of j:"+j);
+	}
+
+}
