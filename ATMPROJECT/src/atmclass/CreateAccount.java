@@ -14,7 +14,7 @@ public class CreateAccount {
 	String fn=sc.next();
 	System.out.println("Enter the last name:");
 	String ln=sc.next();
-	System.out.println("Enter the address:");
+	System.out.println("Enpter the address:");
 	String add=sc.next();
 	System.out.println("Enter the marital status:");
 	String mari=sc.next();
