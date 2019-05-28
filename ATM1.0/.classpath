@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="/home/laserarjun/Downloads/mysql-connector-java-8.0.15.jar"/>
 	<classpathentry kind="lib" path="/home/laserarjun/Documents/java mail API/javax.mail-1.4.4.jar"/>
 	<classpathentry kind="lib" path="/home/laserarjun/Documents/java mail API/activation.jar"/>
+	<classpathentry kind="lib" path="/home/laserarjun/Documents/Jar Files/itextpdf-5.5.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

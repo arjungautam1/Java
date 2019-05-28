@@ -1,5 +1,16 @@
 package updatedatm;
+import java.util.Properties;
 import java.util.Scanner;
+
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 public class MainClass {
 	private static Scanner s;
 
@@ -7,7 +18,7 @@ public class MainClass {
 		while(true)
 		{
 			System.out.println("\n\n\t 		!!!     TEXAS INT'L BANK      !!!\n"); 
-			System.out.println("Enter your choice :\n1.Go to Bank  (Account/Deposit)\n 2.Go to ATM  \n 3.Exit ");
+			System.out.println("Enter your choice :\n1.Go to Bank  (Account/Deposit)\n 2.Go to ATM  \n 3. Send Pdf to gmail  ");
 			System.out.println("Enter your choice here (1-3)");
 			s = new Scanner(System.in);
 			int choice=s.nextInt();
@@ -75,11 +86,59 @@ public class MainClass {
 				break;
 				
 			case 3:
-				System.exit(0);
-				break;
+				final String username = "laserarjun876@gmail.com";
+				final String password = "password";
+				String fromEmail = "laserarjun876@gmaiil.com";
+				String toEmail = "bbasnet1000@gmail.com";
+				
+				Properties properties = new Properties();
+				properties.put("mail.smtp.auth", "true");
+				properties.put("mail.smtp.starttls.enable", "true");
+				properties.put("mail.smtp.host", "smtp.gmail.com");
+				properties.put("mail.smtp.port", "587");
+				
+				Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(username,password);
+					}
+				});
+				//Start our mail message
+				MimeMessage msg = new MimeMessage(session);
+				try {
+					msg.setFrom(new InternetAddress(fromEmail));
+					msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+					msg.setSubject(" Congratulation !! You have won the exciting prizes Please open the pdf to get more information. ");
+					
+					Multipart emailContent = new MimeMultipart();
+					
+					//Text body part
+					MimeBodyPart textBodyPart = new MimeBodyPart();
+					textBodyPart.setText("  Texas  Bank Statement Prepared by Arjun Gautam .  ");
+					
+					//Attachment body part.
+					MimeBodyPart pdfAttachment = new MimeBodyPart();
+					pdfAttachment.attachFile("/home/laserarjun/statement.pdf");
+					
+					//Attach body parts
+					emailContent.addBodyPart(textBodyPart);
+					emailContent.addBodyPart(pdfAttachment);
+					
+					//Attach multipart to message
+					msg.setContent(emailContent);
+					
+					Transport.send(msg);
+					System.out.println("Message has been sent to gmail .");
+					
+
+				} catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+
 			}
 	
 		}
 	}
-}
+
 

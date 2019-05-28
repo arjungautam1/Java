@@ -6,7 +6,7 @@ public class Deposit {
 	private Scanner sc1;
 	void depositAccount()  throws Exception
 	{
-		
+		try {
 		sc1=new Scanner(System.in);
 		System.out.println("Enter your account number:");
 		int accno=sc1.nextInt();
@@ -33,8 +33,12 @@ public class Deposit {
 		Statement st1111=con1111.createStatement();
 		st1111.executeUpdate(query1111);
 		}
-		
-			
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 	
 
 }
